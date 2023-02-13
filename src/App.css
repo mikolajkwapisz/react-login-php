@@ -1,0 +1,35 @@
+.App {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+}
+
+.p__center{
+text-align: center;
+}
+
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #ff715b #ececec;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ececec;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ff715b;
+  border-radius: 0;
+  border: 0px solid #ffffff;
+}
+
+

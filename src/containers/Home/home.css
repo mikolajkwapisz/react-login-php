@@ -1,0 +1,26 @@
+.home{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--nav-text-secondary);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home__table{
+    margin-top: 2rem;
+    border-spacing: 0;
+}
+
+.home__table th{
+    font-family: 'dm-sans-bold';
+}
+
+.home__table td,
+.home__table th  {
+    font-family: 'dm-sans-regular';
+    border: 1px solid black;
+    gap: 0;
+    padding: 1rem;
+}

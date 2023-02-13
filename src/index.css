@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'poppins';
+  src: url(./assets/fonts/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'dm-sans-bold';
+  src: url(./assets/fonts/DM_Sans/DMSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'dm-sans-regular';
+  src: url(./assets//fonts//DM_Sans/DMSans-Regular.ttf);
+}
+
+:root {
+  font-size: 16px;
+
+  /* Aplication Colors */
+  --bg-color: #2C2F33;
+  /* --bg-color: #2C43DD; */
+  
+  --color-ultra-ligth-grey: #ececec;
+  --color-black: #000;
+  --color-dark-blue: #2B1887;
+  --color-grey: #9c9c9c;
+  --color-light-grey: #99AAb5;
+  --color-white: #F4F2FF;
+  --color-orange: #FF715B;
+  --priority-color-high: #E42C5F;
+  --priority-color-medium: #ECB800;
+  --priority-color-low: #2D41A7;
+  --priority-color-grey: #D9D9D9;
+
+  /* Navbar Colors*/
+  --nav-text-primary: #b6b6b6;
+  --nav-text-secondary: #ececec;
+  --nav-bg-primary: #23272A;
+  --nav-bg-secondary: #141418;
+
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: unset;
+  text-decoration: none ;
+}
+
+/* ===== Scrollbar CSS =====
+/* Firefox */
+/* * {
+  scrollbar-width: auto;
+  scrollbar-color: #0d0c0d rgba(0, 0, 0, 0);
+}
+
+/* Chrome, Edge, and Safari */
+/* *::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #0d0c0d;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+}
+*/ 

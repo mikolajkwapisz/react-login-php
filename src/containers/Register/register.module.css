@@ -1,0 +1,119 @@
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register{
+    width: 450px;
+    background-color: white;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.register__h1{
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 0.75rem;
+    font-family: 'dm-sans-bold';
+    color: var(--nav-bg-secondary);
+    border-bottom: 1px solid var(--color-ultra-ligth-grey);
+}
+
+.register__form{
+    padding:  0 2rem;
+
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.register__textField {
+    position: relative;
+    margin-top: 3.5rem;
+}
+
+.register__textField > *{
+    font-family: 'dm-sans-regular';
+}
+
+.register__textField input{
+    color: var(--nav-bg-primary);
+    width: 100%;
+    height: 2rem;
+    font-size: 1.3rem;
+    padding: 0 0.5rem;
+    border: none;
+    border-bottom: 2px solid var(--color-grey);
+    outline: none;
+
+}
+
+.register__textField label {
+    position: absolute;
+    top: 0rem;
+    left: 0.5rem;
+    font-size: 1.3rem;
+    color: var(--color-grey);
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+
+
+.register__textField input:focus ~ label,
+.register__textField input:valid ~ label{
+    margin-top: -1.4rem;
+    color: var(--color-orange);
+    font-size: 1rem;
+}
+
+.register__textField input:focus,
+.register__textField input:valid{
+    border-bottom: 2px solid var(--color-orange);
+}
+
+.register__submit {
+    margin-top: 5rem;
+}
+
+.register__submit button {
+    font-family: 'dm-sans-bold';
+    background-color: var(--color-orange);
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 40px;
+    border: 0;
+    outline: 0;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.register__submit button:hover,
+.register__submit button:focus{
+    cursor: pointer;
+    box-shadow: 0 0 5px 1px var(--color-orange);
+}
+
+.register__signup_link{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.register__signup_link p {
+    font-family: 'dm-sans-regular';
+    color: var(--color-grey);
+    font-size: 1.1rem;
+}
+
+.register__link p:hover{
+    text-shadow: 0px 0px 2px var(--color-orange);
+
+}
+
