@@ -1,44 +1,70 @@
-import { useState } from 'react';
-import './home.css'
+import './home.css';
+import { useEffect, useState } from 'react';
+import {AiFillEyeInvisible, AiFillEye} from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 interface UserData {
     id: number;
     username: string;
     password: string;
     email: string;
-    notHashedPasswrod: string
+    notHashedPassword: string
 }
 
-const Home = ({userData}: {userData: UserData | any}) => {
+interface HomeProps{
+    usersData: UserData[] | UserData
+}
 
-    function handleStringLength (x: number, y: number) {
-        return userData.password.length > x ? `${userData.password.slice(0, y)}...` : userData.password
-    }
+const Home = ({usersData}: HomeProps ) => {
+    const [isVisible, setIsVisible] = useState(false)
+    const isDataEmpty =  Array.isArray(usersData) ? usersData.length != 0 : true
+
+
+
   return (
     <div className='home'>
+        { !isDataEmpty ? (
+            <Link to='/login'><h1>No users detected, sign in</h1></Link>
+        ): (
+
         <table className='home__table'>
             <tbody>
             <tr>
-                <th>id</th>
-                <th>username</th>
-                <th>password</th>
-                <th>email</th>
-                <th>password without hash</th>
+                <th>Id</th>
+                <th>Username</th>
+                <th 
+                    className='home__table--password'
+                    onClick={() => setIsVisible( prev => !prev)}
+                    ><p>Password</p> {!isVisible ? <AiFillEyeInvisible/> : <AiFillEye/>}</th>
+                <th>Email</th>
             </tr>
-            { userData.id ?(
-            <tr>
-                <td>{userData.id}</td>
-                <td>{userData.username}</td>
-                <td >{ handleStringLength(10, 10)}</td>
-                <td>{userData.email}</td>
-                <td>{userData.notHashedPassword}</td>
-            </tr>
+            { Array.isArray(usersData) ?(
+            usersData.map( (user: UserData) => (
+            <tr key={user.id}>
+                <td>{user.id}</td>
+                <td>{user.username}</td>
+                <td
 
-            ): ''
+                    >{isVisible ? user.password : `${user.password.slice(0, 10)}...`  }</td>
+                <td>{user.email}</td>
+            </tr>
+            ) )
+
+            ): (
+                <tr key={usersData.id}>
+                <td>{usersData.id}</td>
+                <td>{usersData.username}</td>
+                <td
+
+                    >{isVisible ? usersData.password : `${usersData.password.slice(0, 10)}...`}</td>
+                <td>{usersData.email}</td>
+            </tr>
+            )
 
             }
             </tbody>
         </table>
+        )}
     </div>
   )
 }

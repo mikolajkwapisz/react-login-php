@@ -13,6 +13,11 @@
   src: url(./assets//fonts//DM_Sans/DMSans-Regular.ttf);
 }
 
+@font-face {
+  font-family: 'poppins-slim';
+  src: url(./assets/fonts/Poppins/Poppins-Light.ttf);
+}
+
 :root {
   font-size: 16px;
 
@@ -27,6 +32,7 @@
   --color-light-grey: #99AAb5;
   --color-white: #F4F2FF;
   --color-orange: #FF715B;
+  --color-light-orange: #f1d0cb;
   --priority-color-high: #E42C5F;
   --priority-color-medium: #ECB800;
   --priority-color-low: #2D41A7;

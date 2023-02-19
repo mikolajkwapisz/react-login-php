@@ -11,16 +11,46 @@
 .home__table{
     margin-top: 2rem;
     border-spacing: 0;
+    border: 2px solid var(--color-orange);
 }
 
 .home__table th{
     font-family: 'dm-sans-bold';
+    font-size: 1.5rem;
 }
 
-.home__table td,
-.home__table th  {
-    font-family: 'dm-sans-regular';
-    border: 1px solid black;
+.home__table th:first-child{
+    border: 0;
+}
+
+.home__table th {
+    background-color: var(--color-orange);
+    color: var(--nav-text-secondary);
+    border-left: 2px solid var(--color-light-orange);
     gap: 0;
     padding: 1rem;
+
+}
+
+.home__table td {
+    font-family: 'poppins-slim';
+    border: 1px solid var(--color-orange);
+    background-color: var(--color-light-orange);
+    color: var(--nav-bg-primary);
+    gap: 0;
+    padding: 1rem;
+    font-size: 1.25rem;
+}
+
+.home__table--password{
+    display: flex;
+    align-items: center;
+}
+
+.home__table--password p {
+    margin-right: 0.5rem;
+}
+
+.home__table--password {
+    cursor: pointer;
 }

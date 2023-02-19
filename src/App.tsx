@@ -4,7 +4,7 @@ import { Home, Login, Register, Navbar } from './containers'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 function App() {
-  const [userData, setUserData] = useState({})
+  const [usersData, setUsersData] = useState([])
   const [isLogged, setIsLogged] = useState(false);
   const [loginError, setLoginError] = useState('')
   const [username, setUsername] = useState('')
@@ -12,16 +12,16 @@ function App() {
   const navigateTo = useNavigate()
 
   useEffect(() => {
-    if(isEmptyObject(userData)){
+    if(isEmptyObject(usersData)){
       setIsLogged(false)
     } else {
       setIsLogged(true)
     }
-  }, [userData])
+  }, [usersData])
 
   useEffect(() => {
     if(!isLogged){
-      setUserData({})
+      setUsersData([])
     }
   }, [isLogged])
 
@@ -45,7 +45,7 @@ function App() {
           setLoginError(fetchingData)
         } else  {
           const parsedData = JSON.parse(fetchingData)
-          setUserData({...parsedData, notHashedPassword: password})
+          setUsersData(parsedData)
           setLoginError('')
           navigateTo('/')
         }
@@ -72,7 +72,7 @@ function App() {
       isLogged={isLogged}
       setIsLogged={setIsLogged}/>
       <Routes>
-        <Route path='/' element={ <Home userData = {userData}/>}/>
+        <Route path='/' element={ <Home usersData = {usersData}/>}/>
         <Route path='/login' element={ 
         <Login 
           handleSubmit={handleSubmit}
